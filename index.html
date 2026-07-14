@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educador de Inglés & Lingüística | Perfil Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIABLES DE DISEÑO & PALETA DE COLORES --- */
+        :root {
+            --bg-offwhite: #faf8f5;
+            --text-navy: #0f1e36;
+            --accent-mustard: #e5a93b;
+            --accent-mustard-hover: #cd932a;
+            --card-bg: #ffffff;
+            --border-color: rgba(15, 30, 54, 0.1);
+            --max-width: 1200px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- ESTILOS GLOBALES --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-offwhite);
+            color: var(--text-navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 120px 0; /* Amplio espacio en blanco entre secciones */
+        }
+
+        /* --- BOTONES / CTA --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-mustard);
+            color: var(--text-navy);
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-mustard-hover);
+            transform: translateY(-2px);
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        header {
+            padding: 30px 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-mustard);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            padding-top: 200px;
+            padding-bottom: 120px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-placeholder-img {
+            background-color: rgba(15, 30, 54, 0.05);
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* --- SECCIÓN SOBRE MÍ --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+        }
+
+        .about-image {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            width: 80%;
+            height: 4px;
+            background-color: var(--accent-mustard);
+        }
+
+        .about-placeholder-img {
+            background-color: rgba(15, 30, 54, 0.03);
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- SECCIÓN SERVICIOS --- */
+        .services {
+            background-color: rgba(15, 30, 54, 0.02);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 6px;
+            box-shadow: 0 4px 30px rgba(15, 30, 54, 0.02);
+            border: 1px solid rgba(15, 30, 54, 0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(15, 30, 54, 0.05);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(229, 169, 59, 0.15);
+            border-radius: 4px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-navy);
+            font-weight: bold;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            margin-bottom: 30px;
+        }
+
+        .service-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+        }
+
+        .service-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-mustard);
+            transform: scaleX(0.3);
+            transform-origin: bottom left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-link::after {
+            transform: scaleX(1);
+        }
+
+        /* --- SECCIÓN PORTAFOLIO --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            aspect-ratio: 16/11;
+            background-color: rgba(15, 30, 54, 0.05);
+            cursor: pointer;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 30, 54, 0.92);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--bg-offwhite);
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-overlay .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        /* --- SECCIÓN TESTIMONIOS --- */
+        .testimonials {
+            background-color: rgba(15, 30, 54, 0.02);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .testimonial-slider {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--accent-mustard);
+            opacity: 0.3;
+            margin-bottom: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .testimonial-author::before {
+            content: '';
+            width: 15px;
+            height: 2px;
+            background-color: var(--accent-mustard);
+        }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-navy);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-mustard);
+        }
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 1rem;
+            opacity: 0.6;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus ~ label,
+        .form-input:not(:placeholder-shown) ~ label {
+            top: -12px;
+            font-size: 0.8rem;
+            opacity: 1;
+            color: var(--accent-mustard);
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--text-navy);
+            color: var(--bg-offwhite);
+            padding: 60px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.8;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-mustard);
+        }
+
+        /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+        @media (max-width: 992px) {
+            section { padding: 80px 0; }
+            .hero-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+            .hero-content p { margin: 0 auto 40px; }
+            .about-grid { grid-template-columns: 1fr; gap: 50px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* En un entorno real se sustituiría por menú hamburguesa */
+            .services-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-grid { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">EDU.LINGÜÍSTICA</a>
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Domina el Inglés y la Lingüística con Claridad.</h1>
+                <p>Aprende desde las bases gramaticales hasta la semántica avanzada mediante un enfoque estructurado, minimalista y adaptado a tus objetivos profesionales.</p>
+                <a href="#contacto" class="btn">Agendar mi primera clase</a>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-placeholder-img">
+                    <span style="opacity: 0.4; font-size: 0.9rem;">[Fotografía Profesional / Ilustración Mínima]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2 class="section-title">Conoce a tu educador</h2>
+                <p>Soy un apasionado de la enseñanza de la lengua y las estructuras lingüísticas. Mi filosofía se basa en desglosar conceptos complejos en ideas simples, estructuradas y asimilables.</p>
+                <p>Con más de 8 años de experiencia académica, ayudo a estudiantes universitarios y profesionales a romper las barreras del idioma y comprender la lógica profunda detrás de cada regla gramatical.</p>
+            </div>
+            <div class="about-image">
+                <div class="about-placeholder-img">
+                    <span style="opacity: 0.4; font-size: 0.9rem;">[Entorno de Estudio / Retrato]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS (3 TARJETAS) -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="services-header">
+                <h2 class="section-title" style="display:inline-block;">Servicios de Aprendizaje</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Tarjeta 1 -->
+                <div class="service-card">
+                    <div class="service-icon">01</div>
+                    <h3>Certificaciones Oficiales</h3>
+                    <p>Preparación intensiva y estratégica para exámenes internacionales (PET, FCE, CAE, IELTS) enfocada en resultados.</p>
+                    <a href="#contacto" class="service-link">Saber más</a>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="service-card">
+                    <div class="service-icon">02</div>
+                    <h3>Gramática & Fluidez</h3>
+                    <p>Sesiones estructuradas para consolidar bases sintácticas y perfeccionar la producción oral de manera natural.</p>
+                    <a href="#contacto" class="service-link">Saber más</a>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="service-card">
+                    <div class="service-icon">03</div>
+                    <h3>Asesoría Lingüística</h3>
+                    <p>Tutorías avanzadas en fonética, fonología, morfología y análisis del discurso para perfiles académicos.</p>
+                    <a href="#contacto" class="service-link">Saber más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PORTAFOLIO -->
+    <section class="portfolio" id="portafolio">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Recursos y Metodología</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto; opacity: 0.8;">Una muestra del material didáctico exclusivo diseñado para simplificar el autoestudio.</p>
+            
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item">
+                    <div style="display:flex; align-items:center; justify-content:center; height:100%; opacity:0.3; font-size:0.9rem;">[Guía de Tiempos Verbales]</div>
+                    <div class="portfolio-overlay">
+                        <h4>Esquema de Tiempos Complejos</h4>
+                        <p>Infografía interactiva descargable para dominar los condicionales y el estilo indirecto.</p>
+                        <a href="#" class="btn btn-sm" onclick="event.preventDefault();">Ver recurso</a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item">
+                    <div style="display:flex; align-items:center; justify-content:center; height:100%; opacity:0.3; font-size:0.9rem;">[Manual de Fonética]</div>
+                    <div class="portfolio-overlay">
+                        <h4>Manual Transcripción Fonética</h4>
+                        <p>Ejercicios guiados y audios de apoyo para la correcta pronunciación de fonemas difíciles.</p>
+                        <a href="#" class="btn btn-sm" onclick="event.preventDefault();">Ver recurso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="testimonial-slider">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">Su metodología basada en estructuras lógicas cambió por completo mi forma de entender la gramática en inglés. Pasé de memorizar reglas a comprender el porqué de la estructura de las oraciones.</p>
+                <div class="testimonial-author">Carlos Mendoza, Estudiante de Traducción</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contact" id="contacto">
+        <div class="container contact-container">
+            <div class="contact-header">
+                <h2 class="section-title" style="display:inline-block;">Inicia tu Camino</h2>
+                <p style="opacity: 0.7; margin-top: 10px;">Escríbeme para evaluar tu nivel y diseñar un plan a tu medida.</p>
+            </div>
+            
+            <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Formulario enviado (Demostración).');">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-input" placeholder=" " required>
+                    <label for="name">Nombre completo</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" class="form-input" placeholder=" " required>
+                    <label for="email">Correo electrónico</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="interest" class="form-input" placeholder=" ">
+                    <label for="interest">Servicio de interés / Nivel actual</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" class="form-input" rows="4" placeholder=" " style="resize: none;" required></textarea>
+                    <label for="message">¿En qué puedo ayudarte?</label>
+                </div>
+
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <p>&copy; 2026 Edu.Lingüística. Todos los derechos reservados.</p>
+            <ul class="footer-socials">
+                <li><a href="#" onclick="event.preventDefault();">LinkedIn</a></li>
+                <li><a href="#" onclick="event.preventDefault();">YouTube Académico</a></li>
+                <li><a href="#" onclick="event.preventDefault();">Contacto Directo</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
