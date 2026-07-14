@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+html_content_v2 = """<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educador de Inglés & Lingüística | Perfil Profesional</title>
+    <title>Angel Rivera | Educador de Inglés & Lingüística</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -50,6 +50,7 @@
         img {
             max-width: 100%;
             display: block;
+            object-fit: cover;
         }
 
         .container {
@@ -59,7 +60,7 @@
         }
 
         section {
-            padding: 120px 0; /* Amplio espacio en blanco entre secciones */
+            padding: 120px 0;
         }
 
         /* --- BOTONES / CTA --- */
@@ -152,17 +153,15 @@
 
         .hero-image-container {
             position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(15, 30, 54, 0.08);
+            aspect-ratio: 4/5;
         }
 
-        .hero-placeholder-img {
-            background-color: rgba(15, 30, 54, 0.05);
+        .hero-image-container img {
             width: 100%;
-            aspect-ratio: 4/5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed var(--border-color);
+            height: 100%;
         }
 
         /* --- SECCIÓN SOBRE MÍ --- */
@@ -199,14 +198,16 @@
             background-color: var(--accent-mustard);
         }
 
-        .about-placeholder-img {
-            background-color: rgba(15, 30, 54, 0.03);
-            width: 100%;
-            aspect-ratio: 16/10;
+        .about-img-wrapper {
             border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            box-shadow: 0 10px 30px rgba(15, 30, 54, 0.05);
+        }
+        
+        .about-img-wrapper img {
+            width: 100%;
+            height: 100%;
         }
 
         /* --- SECCIÓN SERVICIOS --- */
@@ -304,6 +305,11 @@
             aspect-ratio: 16/11;
             background-color: rgba(15, 30, 54, 0.05);
             cursor: pointer;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
         }
 
         .portfolio-overlay {
@@ -473,7 +479,7 @@
             color: var(--accent-mustard);
         }
 
-        /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 992px) {
             section { padding: 80px 0; }
             .hero-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
@@ -483,7 +489,7 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* En un entorno real se sustituiría por menú hamburguesa */
+            .nav-links { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .portfolio-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-grid { flex-direction: column; gap: 20px; text-align: center; }
@@ -495,7 +501,7 @@
     <!-- MENÚ DE NAVEGACIÓN -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">EDU.LINGÜÍSTICA</a>
+            <a href="#" class="logo">ANGEL RIVERA.</a>
             <ul class="nav-links">
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -511,13 +517,12 @@
         <div class="container hero-grid">
             <div class="hero-content">
                 <h1>Domina el Inglés y la Lingüística con Claridad.</h1>
-                <p>Aprende desde las bases gramaticales hasta la semántica avanzada mediante un enfoque estructurado, minimalista y adaptado a tus objetivos profesionales.</p>
+                <p>Especialista en la enseñanza del idioma inglés. Mi enfoque te ayudará a dominar la gramática, el vocabulario y la preparación para certificaciones oficiales con una metodología estructurada.</p>
                 <a href="#contacto" class="btn">Agendar mi primera clase</a>
             </div>
             <div class="hero-image-container">
-                <div class="hero-placeholder-img">
-                    <span style="opacity: 0.4; font-size: 0.9rem;">[Fotografía Profesional / Ilustración Mínima]</span>
-                </div>
+                <!-- Imagen relacionada al estudio de la lengua -->
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800" alt="Material de estudio y enseñanza del inglés">
             </div>
         </div>
     </section>
@@ -526,44 +531,45 @@
     <section class="about" id="sobre-mi">
         <div class="container about-grid">
             <div class="about-text">
-                <h2 class="section-title">Conoce a tu educador</h2>
-                <p>Soy un apasionado de la enseñanza de la lengua y las estructuras lingüísticas. Mi filosofía se basa en desglosar conceptos complejos en ideas simples, estructuradas y asimilables.</p>
-                <p>Con más de 8 años de experiencia académica, ayudo a estudiantes universitarios y profesionales a romper las barreras del idioma y comprender la lógica profunda detrás de cada regla gramatical.</p>
+                <h2 class="section-title">Hola, soy Angel Rivera</h2>
+                <p>Soy un educador apasionado por la enseñanza del inglés y el estudio profundo de la lengua. Mi objetivo es facilitar el aprendizaje del idioma, desde sus bases gramaticales hasta la fluidez comunicativa.</p>
+                <p>Creo firmemente que aprender inglés no debe basarse solo en la repetición memorística, sino en comprender la lógica y estructura (sintaxis, semántica y pragmática) detrás de cada expresión. Trabajo con estudiantes para que logren superar con éxito exámenes como el PET y desarrollen verdadera confianza al comunicarse.</p>
             </div>
             <div class="about-image">
-                <div class="about-placeholder-img">
-                    <span style="opacity: 0.4; font-size: 0.9rem;">[Entorno de Estudio / Retrato]</span>
+                <div class="about-img-wrapper">
+                    <!-- Imagen de entorno académico / estudio -->
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e73b22b0c?auto=format&fit=crop&q=80&w=800" alt="Angel Rivera - Entorno de trabajo académico">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN SERVICIOS (3 TARJETAS) -->
+    <!-- SECCIÓN SERVICIOS -->
     <section class="services" id="servicios">
         <div class="container">
             <div class="services-header">
-                <h2 class="section-title" style="display:inline-block;">Servicios de Aprendizaje</h2>
+                <h2 class="section-title" style="display:inline-block;">Enfoque de Enseñanza</h2>
             </div>
             <div class="services-grid">
                 <!-- Tarjeta 1 -->
                 <div class="service-card">
                     <div class="service-icon">01</div>
-                    <h3>Certificaciones Oficiales</h3>
-                    <p>Preparación intensiva y estratégica para exámenes internacionales (PET, FCE, CAE, IELTS) enfocada en resultados.</p>
+                    <h3>Preparación de Certificaciones</h3>
+                    <p>Entrenamiento estratégico y resolución de ejercicios prácticos para superar con éxito exámenes internacionales como el PET.</p>
                     <a href="#contacto" class="service-link">Saber más</a>
                 </div>
                 <!-- Tarjeta 2 -->
                 <div class="service-card">
                     <div class="service-icon">02</div>
-                    <h3>Gramática & Fluidez</h3>
-                    <p>Sesiones estructuradas para consolidar bases sintácticas y perfeccionar la producción oral de manera natural.</p>
+                    <h3>Gramática y Reported Speech</h3>
+                    <p>Sesiones estructuradas para consolidar tiempos verbales, condicionales y bases sintácticas complejas de manera sencilla.</p>
                     <a href="#contacto" class="service-link">Saber más</a>
                 </div>
                 <!-- Tarjeta 3 -->
                 <div class="service-card">
                     <div class="service-icon">03</div>
-                    <h3>Asesoría Lingüística</h3>
-                    <p>Tutorías avanzadas en fonética, fonología, morfología y análisis del discurso para perfiles académicos.</p>
+                    <h3>Lingüística Aplicada</h3>
+                    <p>Análisis del lenguaje, pragmática y semántica para quienes buscan comprender la mecánica interna del idioma.</p>
                     <a href="#contacto" class="service-link">Saber más</a>
                 </div>
             </div>
@@ -574,24 +580,24 @@
     <section class="portfolio" id="portafolio">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Recursos y Metodología</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto; opacity: 0.8;">Una muestra del material didáctico exclusivo diseñado para simplificar el autoestudio.</p>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto; opacity: 0.8;">Material didáctico estructurado para simplificar el estudio de la lengua inglesa.</p>
             
             <div class="portfolio-grid">
                 <!-- Item 1 -->
                 <div class="portfolio-item">
-                    <div style="display:flex; align-items:center; justify-content:center; height:100%; opacity:0.3; font-size:0.9rem;">[Guía de Tiempos Verbales]</div>
+                    <img src="https://images.unsplash.com/photo-1503694978374-8a2fa686963a?auto=format&fit=crop&q=80&w=600" alt="Guías de gramática inglesa">
                     <div class="portfolio-overlay">
-                        <h4>Esquema de Tiempos Complejos</h4>
-                        <p>Infografía interactiva descargable para dominar los condicionales y el estilo indirecto.</p>
+                        <h4>Guía de Tiempos Verbales</h4>
+                        <p>Material de apoyo para dominar estructuras gramaticales avanzadas.</p>
                         <a href="#" class="btn btn-sm" onclick="event.preventDefault();">Ver recurso</a>
                     </div>
                 </div>
                 <!-- Item 2 -->
                 <div class="portfolio-item">
-                    <div style="display:flex; align-items:center; justify-content:center; height:100%; opacity:0.3; font-size:0.9rem;">[Manual de Fonética]</div>
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600" alt="Práctica auditiva y fonética">
                     <div class="portfolio-overlay">
-                        <h4>Manual Transcripción Fonética</h4>
-                        <p>Ejercicios guiados y audios de apoyo para la correcta pronunciación de fonemas difíciles.</p>
+                        <h4>Ejercicios de Listening & Fonética</h4>
+                        <p>Prácticas guiadas para mejorar la comprensión auditiva y pronunciación.</p>
                         <a href="#" class="btn btn-sm" onclick="event.preventDefault();">Ver recurso</a>
                     </div>
                 </div>
@@ -604,8 +610,8 @@
         <div class="container">
             <div class="testimonial-slider">
                 <div class="quote-icon">“</div>
-                <p class="testimonial-text">Su metodología basada en estructuras lógicas cambió por completo mi forma de entender la gramática en inglés. Pasé de memorizar reglas a comprender el porqué de la estructura de las oraciones.</p>
-                <div class="testimonial-author">Carlos Mendoza, Estudiante de Traducción</div>
+                <p class="testimonial-text">Angel tiene una habilidad única para explicar temas gramaticales complejos como el 'reported speech' y los condicionales, haciéndolos lógicos y fáciles de aplicar en un examen real.</p>
+                <div class="testimonial-author">María G., Estudiante de Certificación PET</div>
             </div>
         </div>
     </section>
@@ -615,7 +621,7 @@
         <div class="container contact-container">
             <div class="contact-header">
                 <h2 class="section-title" style="display:inline-block;">Inicia tu Camino</h2>
-                <p style="opacity: 0.7; margin-top: 10px;">Escríbeme para evaluar tu nivel y diseñar un plan a tu medida.</p>
+                <p style="opacity: 0.7; margin-top: 10px;">Escríbeme para evaluar tu nivel de inglés y diseñar un plan de estudio a tu medida.</p>
             </div>
             
             <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Formulario enviado (Demostración).');">
@@ -631,12 +637,12 @@
 
                 <div class="form-group">
                     <input type="text" id="interest" class="form-input" placeholder=" ">
-                    <label for="interest">Servicio de interés / Nivel actual</label>
+                    <label for="interest">Objetivo principal (Ej. Preparación PET, Gramática)</label>
                 </div>
 
                 <div class="form-group">
                     <textarea id="message" class="form-input" rows="4" placeholder=" " style="resize: none;" required></textarea>
-                    <label for="message">¿En qué puedo ayudarte?</label>
+                    <label for="message">¿En qué área del idioma necesitas más apoyo?</label>
                 </div>
 
                 <button type="submit" class="btn">Enviar Mensaje</button>
@@ -647,10 +653,10 @@
     <!-- FOOTER -->
     <footer>
         <div class="container footer-grid">
-            <p>&copy; 2026 Edu.Lingüística. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Angel Rivera - Enseñanza del Inglés. Todos los derechos reservados.</p>
             <ul class="footer-socials">
                 <li><a href="#" onclick="event.preventDefault();">LinkedIn</a></li>
-                <li><a href="#" onclick="event.preventDefault();">YouTube Académico</a></li>
+                <li><a href="#" onclick="event.preventDefault();">Material de Estudio</a></li>
                 <li><a href="#" onclick="event.preventDefault();">Contacto Directo</a></li>
             </ul>
         </div>
@@ -658,3 +664,7 @@
 
 </body>
 </html>
+"""
+
+with open("Angel_Rivera_Educador_Ingles.html", "w", encoding="utf-8") as file:
+    file.write(html_content_v2)
